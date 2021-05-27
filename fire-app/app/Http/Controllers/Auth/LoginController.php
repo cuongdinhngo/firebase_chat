@@ -61,7 +61,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        \DB::enableQueryLog();
         try {
             $result = $this->auth->signInWithEmailAndPassword($request->email, $request->password);
 
@@ -71,22 +70,16 @@ class LoginController extends Controller
 
                 if ($this->attemptLogin($request)) {
                     $customToken = $this->auth->createCustomToken($uid)->toString();
-                    logger([
-                        'device_token' => $request->device_token,
-                        'id_token' => $idToken,
-                        'custom_token' => $customToken,
-                    ]);
+
                     auth()->user()->update([
                         'device_token' => $request->device_token,
                         'id_token' => $idToken ,
                         'custom_token' => $customToken,
                     ]);
-                    logger(\DB::getQueryLog());
                     return $this->sendLoginResponse($request);
                 }
             }
         } catch (\Exception $e) {
-            logger($e);
             return redirect('/login');
         }
     }

@@ -44,4 +44,10 @@ class MessageService
     {
         return app(MessageRepository::class)->list($senderId, $receiverId);
     }
+
+    public function composeNotificationContent($message)
+    {
+        $sender = $message->sender;
+        return $sender->name." sent a message";
+    }
 }
