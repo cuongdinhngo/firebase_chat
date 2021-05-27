@@ -8,13 +8,13 @@ importScripts('https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js');
 // your app's Firebase config object.
 // https://firebase.google.com/docs/web/setup#config-object
 firebase.initializeApp({
-    apiKey: "AIzaSyD148Ro1XqPI6rfrlMAR_UK9LuvXHnI1X8",
-    authDomain: "ndc-chat-project.firebaseapp.com",
-    databaseURL: "https://ndc-chat-project-default-rtdb.firebaseio.com",
-    projectId: "ndc-chat-project",
-    storageBucket: "ndc-chat-project.appspot.com",
-    messagingSenderId: "514376478797",
-    appId: "1:514376478797:web:76b0bf6b5f85c233f4ac04"
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxx",
+    authDomain: "xxxxxxxxxxxxx-project.firebaseapp.com",
+    databaseURL: "https://xxxxxxxxxxxxxxxxxx-project-default-rtdb.firebaseio.com",
+    projectId: "xxxxxxxxxxx-project",
+    storageBucket: "xxxxxxxxxxxxxxxxx-project.appspot.com",
+    messagingSenderId: "xxxxxxxxxxxxxxxxxxxxxx",
+    appId: "xxxxxxxxxxxxxxxxxxxx"
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
