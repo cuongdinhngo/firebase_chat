@@ -22,13 +22,16 @@ const messaging = firebase.messaging();
 const database = firebase.database();
 const auth = firebase.auth();
 
-
 messaging.onMessage(function(payload) {
     console.log("onMessage: " + payload.notification.body);
+    let notificationBody = JSON.parse(payload.notification.body);
     const noteTitle = payload.notification.title;
-    const noteOptions = payload.notification.body;
+    const noteOptions = {
+        body: notificationBody.notifyContent,
+        icon: payload.notification.icon,
+    };
     new Notification(noteTitle, noteOptions);
-    appendMessage(JSON.parse(payload.notification.body));
+    appendMessage(notificationBody.msgContent);
     scrollToButtom('.messages');
 }, e => {
     console.log(e);
@@ -113,6 +116,7 @@ function appendMessage(message) {
     </div>`;
     $(".messages-content").append(item);
 }
+
 
 function loginThenUpdateFirebaseToken(idTarget) {
     messaging.requestPermission()
