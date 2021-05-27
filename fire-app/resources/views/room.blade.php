@@ -47,8 +47,6 @@
 
 @section('extra_script')
 <script>
-
-    var userNotifications = <?php echo json_encode($userNotifications); ?>;
     var currentUserId = <?php echo $sender->id; ?>;
     var group = <?php echo json_encode($group);?>;
     var listMessages = <?php echo $messages->toJson();?>;
@@ -56,7 +54,6 @@
     $(document).ready(function() {
         loadMessages(listMessages);
         scrollToButtom('.messages');
-        displayNotify();
     });
 
 

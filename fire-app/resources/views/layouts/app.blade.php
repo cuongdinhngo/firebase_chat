@@ -110,11 +110,8 @@
 
             auth.signInWithCustomToken(currentUser.custom_token)
                 .then((userCredential) => {
-                    console.log('SIGN IN ...');
                     var user = userCredential.user;
                     uid = user.uid;
-
-                    console.log('CURRENT UID = ' + uid);
                     
                     userStatusDatabaseRef = database.ref('/status/' + uid);
 

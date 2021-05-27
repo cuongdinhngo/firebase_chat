@@ -5,13 +5,13 @@ var rooms;
 var ajaxSetupHeader = {headers: {'X-CSRF-TOKEN': csrfToken}};
 var allUsers = [];
 var firebaseConfig = {
-    apiKey: "AIzaSyD148Ro1XqPI6rfrlMAR_UK9LuvXHnI1X8",
-    authDomain: "ndc-chat-project.firebaseapp.com",
-    databaseURL: "https://ndc-chat-project-default-rtdb.firebaseio.com",
-    projectId: "ndc-chat-project",
-    storageBucket: "ndc-chat-project.appspot.com",
-    messagingSenderId: "514376478797",
-    appId: "1:514376478797:web:76b0bf6b5f85c233f4ac04"
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxx",
+    authDomain: "xxxxxxxxxxxxxx-project.firebaseapp.com",
+    databaseURL: "https://xxxxxxxxxxxxxxxxxxxx-default-rtdb.firebaseio.com",
+    projectId: "xxxxxxxxxxxxxxxx-project",
+    storageBucket: "xxxxxxxxxxxxxx-project.appspot.com",
+    messagingSenderId: "xxxxxxxxxxxxxxxxxxxx",
+    appId: "xxxxxxxxxxxxxxx"
 };
 var friends;
 
@@ -33,22 +33,6 @@ messaging.onMessage(function(payload) {
 }, e => {
     console.log(e);
 });
-
-function getUserByRoomId() {
-    $.ajaxSetup(ajaxSetupHeader);
-    $.ajax({
-        url: "/rooms/get-user-by-room",
-        method: "GET",
-        async: false,
-        data: {
-            room_id: window.route.get('room_id')
-        }
-    }).done(function( response ) {
-        allUsers = response;
-    }).fail(function( jqXHR, textStatus ) {
-        console.log( "getUserByRoomId is Failed" + textStatus );
-    }); 
-}
 
 function getFriends() {
     $.ajaxSetup(ajaxSetupHeader);
@@ -105,24 +89,6 @@ function updateUserRealtimeState (uid) {
     });
 }
 
-function getUserLogin() {
-    $.ajaxSetup(ajaxSetupHeader);
-    $.ajax({
-        url: "/users/current-user-login",
-        method: "GET",
-        async: false,
-    }).done(function( user ) {
-        currentUserLogin = user;
-    }).fail(function( jqXHR, textStatus ) {
-        console.log( "getUserLogin FAILED " + textStatus );
-    });
-}
-
-function getTotalUsersOnline() {
-    $('#userOnline').html(usersOnline.length);
-    listUsersOnline();
-}
-
 function scrollToButtom(object) {
     $(`${object}`).animate({
             scrollTop: $(`${object}`).get(0).scrollHeight
@@ -146,19 +112,6 @@ function appendMessage(message) {
         </div>
     </div>`;
     $(".messages-content").append(item);
-}
-
-function displayNotify() {
-    let qtyNotify = userNotifications.length;
-    if (qtyNotify > 10) {
-        $("#notify").css("display", "block");
-        $("#notify").css("padding", "2px");
-        $('#notify').html('10+');
-    }
-    if (qtyNotify > 0 && qtyNotify < 10) {
-        $("#notify").css("display", "block");
-        $('#notify').html(qtyNotify);
-    }
 }
 
 function loginThenUpdateFirebaseToken(idTarget) {

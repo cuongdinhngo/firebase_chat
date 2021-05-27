@@ -28,21 +28,9 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // View::composer(
-        //     ['room'],
-        //     UserRoomComposer::class
-        // );
-        View::composer(
-            ['room', 'chat'],
-            UserNotificationComposer::class
-        );
         View::composer(
             ['chat'],
             ListUsersComposer::class
         );
-        // View::composer(
-        //     ['room', 'chat'],
-        //     ListFriendsComposer::class
-        // );
     }
 }

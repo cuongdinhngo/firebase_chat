@@ -15,14 +15,12 @@ class UserController extends BaseController
     public $userService;
     protected $userRepo;
     protected $node = 'users';
-    protected $messaging;
 
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
         parent::__construct($this->node);
         $this->userRepo = $this->repository;
-        // $this->messaging = $messaging;
     }
 
     /**
