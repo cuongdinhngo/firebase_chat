@@ -49,7 +49,7 @@ class MessageController extends Controller
     {
         try {
             $message = $this->messageService->postMessage($request->sender_id, $request->receiver_id);
-            $response = $this->sendNotification($request->device_token, $message);
+            $response = $this->sendNotification($request->device_token, $this->messageService->composeNotificationContent($message));
             return ['message' => $message, 'response' => $response];
         } catch (\Exception $e) {
             report($e);
@@ -62,7 +62,7 @@ class MessageController extends Controller
         $data = [
             "to" => $deviceToken,
             "notification" => [
-                "title" => 'notification',
+                "title" => 'Message Notification',
                 "body" => $message,  
             ]
         ];

@@ -26,10 +26,7 @@ const auth = firebase.auth();
 messaging.onMessage(function(payload) {
     console.log("onMessage: " + payload.notification.body);
     const noteTitle = payload.notification.title;
-    const noteOptions = {
-        body: payload.notification.body,
-        icon: payload.notification.icon,
-    };
+    const noteOptions = payload.notification.body;
     new Notification(noteTitle, noteOptions);
     appendMessage(JSON.parse(payload.notification.body));
     scrollToButtom('.messages');
@@ -139,7 +136,7 @@ function loadMessages(listMessages) {
 }
 
 function appendMessage(message) {
-    let isCurrentUser = currentUserId == message.sender_id ? "is-current-user" : "";
+    let isCurrentUser = currentUserId == message.sender_id || currentUser.id == message.sender_id ? "is-current-user" : "";
     let item = `<div class="message ${isCurrentUser}">
         <div class="message-item user-name">
             ${group[message.sender_id]['name']}:
