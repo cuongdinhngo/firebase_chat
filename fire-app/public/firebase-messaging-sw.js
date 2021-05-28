@@ -11,10 +11,10 @@ firebase.initializeApp({
     apiKey: "xxxxxxxxxxxxxxxxxxxxxxx",
     authDomain: "xxxxxxxxxxxxx-project.firebaseapp.com",
     databaseURL: "https://xxxxxxxxxxxxxxxxxx-project-default-rtdb.firebaseio.com",
-    projectId: "xxxxxxxxxxx-project",
+    projectId: "xxxxxxxxxxxxxx-project",
     storageBucket: "xxxxxxxxxxxxxxxxx-project.appspot.com",
     messagingSenderId: "xxxxxxxxxxxxxxxxxxxxxx",
-    appId: "xxxxxxxxxxxxxxxxxxxx"
+    appId: "xxxxxxxxxxxxxxxxxxxxxxx"
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
