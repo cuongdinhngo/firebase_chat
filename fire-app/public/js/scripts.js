@@ -5,13 +5,13 @@ var rooms;
 var ajaxSetupHeader = {headers: {'X-CSRF-TOKEN': csrfToken}};
 var allUsers = [];
 var firebaseConfig = {
-    apiKey: "xxxxxxxxxxxxxxxxxxxxxx",
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxx",
     authDomain: "xxxxxxxxxxxxxx-project.firebaseapp.com",
     databaseURL: "https://xxxxxxxxxxxxxxxxxxxx-default-rtdb.firebaseio.com",
     projectId: "xxxxxxxxxxxxxxxx-project",
     storageBucket: "xxxxxxxxxxxxxx-project.appspot.com",
     messagingSenderId: "xxxxxxxxxxxxxxxxxxxx",
-    appId: "xxxxxxxxxxxxxxx"
+    appId: "xxxxxxxxxxxxxxxxxxxxxxx"
 };
 var friends;
 
