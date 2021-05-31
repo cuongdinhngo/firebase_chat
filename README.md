@@ -1,6 +1,6 @@
 # REALTIME CHAT: LARAVEL, MySQL, FIREBASE (Authentication, Cloud Messaging and Realtime Database)
 
-read more detail at [my linkedin](https://www.linkedin.com/pulse/firebase-realtime-chat-laravel-mysql-authentication-cloud-ngo)
+Read more detail at [my linkedin](https://www.linkedin.com/pulse/firebase-realtime-chat-laravel-mysql-authentication-cloud-ngo)
 
 1) Go to `fire-docker` folder to start containers
 2) Run command: `docker-composer up -d` at `fire-docker`
